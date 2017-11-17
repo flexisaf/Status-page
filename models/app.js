@@ -2,7 +2,7 @@
 
 module.exports = (Sequelize, DataTypes) => {
 	const App = Sequelize.define('App', {
-		id: { type: DataTypes.UUID, primaryKey: true, unique: true, defaultValue: Sequelize.UUIDV4 },
+		id: { type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
 		name: { type: DataTypes.STRING, unique: true },
 		url: { type: DataTypes.STRING, unique: true }
 	}, {

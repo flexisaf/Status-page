@@ -11,12 +11,12 @@ const app = express();
 routes(app);
 
 models.sequelize.sync().then(() => {
-	console.log('Database migrated')
+	console.log('Database migrated');
 }).catch(err => {
 	console.log('Database not created. You might have issues with the application')
 })
 
 
 app.listen(port, () => {
-    console.log(`running on ${port}`)
+    console.log(`running on ${port}`);
 });

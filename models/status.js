@@ -2,7 +2,7 @@
 
 module.exports = (Sequelize, DataTypes) => {
 	const Status = Sequelize.define('Status', {
-		id: { type: DataTypes.UUID, primaryKey: true, unique: true, defaultValue: DataTypes.UUIDV4},
+		id: { type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
 		url: { type: DataTypes.STRING },
 		status: { type: DataTypes.STRING }
 	}, {
