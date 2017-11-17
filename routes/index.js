@@ -1,3 +1,5 @@
+'use strict';
+
 const controllers = require('../controllers');
 const pingController = controllers.pingController;
 
