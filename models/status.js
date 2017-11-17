@@ -1,3 +1,4 @@
+'use strict';
 
 module.exports = (Sequelize, DataTypes) => {
 	const Status = Sequelize.define('Status', {

@@ -1,4 +1,4 @@
-
+'use strict';
 
 module.exports = (Sequelize, DataTypes) => {
 	const App = Sequelize.define('App', {
