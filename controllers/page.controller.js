@@ -1,7 +1,7 @@
 'use strict';
 
 const index = (req, res) => {
-    return res.render('index');
+    return res.redirect('/ping');
 }
 
 module.exports = {

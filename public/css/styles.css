@@ -16,3 +16,34 @@
     height: 30px;
     border-radius: 50%;
 }
+
+.status {
+  border: 1px solid green;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  padding: 5px;
+}
+
+.alive {
+  color: green;
+  background-color: green;
+}
+
+.dead {
+  color: red;
+  background-color: red;
+}
+
+.name {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: gray;
+  float: left;
+}
+
+.content {
+  margin-top: 22px;
+}
