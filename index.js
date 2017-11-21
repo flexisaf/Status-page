@@ -8,13 +8,16 @@ const models = require('./models');
 const port = process.env.port;
 const app = express();
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 routes(app);
 
 models.sequelize.sync().then(() => {
 	console.log('Database migrated');
 }).catch(err => {
-	console.log('Database not created. You might have issues with the application')
-})
+	console.log('Database not created. You might have issues with the application', err);
+});
 
 
 app.listen(port, () => {
