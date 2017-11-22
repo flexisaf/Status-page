@@ -8,8 +8,17 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
+const envConfig = {
+  username:process.env.username,
+  password: process.env.password,
+  database: process.env.database,
+  host: process.env.host,
+  dialect: process.env.dialect,
+  logging: false,
+};
+
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(envConfig.database, envConfig.username, envConfig.password, envConfig);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
