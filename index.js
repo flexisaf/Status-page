@@ -11,15 +11,18 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-routes(app);
+function start() {
+  routes(app);
 
-models.sequelize.sync().then(() => {
-	console.log('Database migrated');
-}).catch(err => {
-	console.log('Database not created. You might have issues with the application', err);
-});
+  models.sequelize.sync().then(() => {
+    console.log('Database migrated');
+  }).catch(err => {
+    console.log('Database not created. You might have issues with the application', err);
+  });
 
+  app.listen(port, () => {
+      console.log(`running on ${port}`);
+  });
+}
 
-app.listen(port, () => {
-    console.log(`running on ${port}`);
-});
+start();
