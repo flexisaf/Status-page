@@ -5,7 +5,7 @@ const express = require('express');
 const routes = require('./routes');
 const models = require('./models');
 
-const port = process.env.port;
+const port = process.env.SERVER_PORT;
 const app = express();
 
 app.set('view engine', 'ejs');
